@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" /> 
+        <variable
+            name="gameViewModel"
+            type="com.example.bikeshmaharjan.puzzleversion1.viewmodel.ViewModel"/>
+
+        <variable
+            name="handler"
+            type="com.example.bikeshmaharjan.puzzleversion1.viewmodel.ViewModel"/>
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.bikeshmaharjan.puzzleversion1.view.MainActivity">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_above="@+id/button5"
+            android:layout_margin="@dimen/margin"
+            android:layout_toLeftOf="@+id/button5"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["0"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->handler.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["0"]}'
+             />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["1"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["1"]}'/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_above="@+id/button5"
+            android:layout_margin="@dimen/margin"
+            android:layout_toRightOf="@+id/button5"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["2"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["2"]}' />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/button1"
+            android:layout_margin="@dimen/margin"
+            android:layout_toLeftOf="@+id/button5"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["3"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["3"]}' />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/button2"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["4"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["4"]}' />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/button3"
+            android:layout_margin="@dimen/margin"
+            android:layout_toRightOf="@+id/button5"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["5"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["5"]}' />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/button5"
+            android:layout_margin="@dimen/margin"
+            android:layout_toLeftOf="@+id/button5"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["6"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["6"]}' />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/button5"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin"
+            android:background="@color/buttonColor"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["7"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["7"]}' />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/button5"
+            android:layout_margin="@dimen/margin"
+            android:layout_toRightOf="@id/button5"
+            android:clickable='@{gameViewModel.win=="true" ? false : true}'
+            android:visibility='@{gameViewModel.tiles["8"]=="0" ? View.INVISIBLE : View.VISIBLE}'
+            android:background="@color/buttonColor"
+            android:onClick="@{(v)->gameViewModel.tileClicked(v)}"
+            android:text='@{gameViewModel.tiles["8"]}' />
+
+
+        <!-- INTEFACE CONTROLS: -->
+
+        <Button
+            android:id="@+id/button_newGame"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{()->handler.newGameSelected()}"
+            android:text="@string/button_newGame" />
+
+        <TextView
+            android:id="@+id/winmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_newGame"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="10dp"
+            android:text="@={gameViewModel.winmessage}"
+            tools:text="@{gameViewModel.winmessage}"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    </RelativeLayout>
+</layout>
